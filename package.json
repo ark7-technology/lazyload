@@ -1,0 +1,53 @@
+{
+  "name": "@ark7/lazyload",
+  "version": "1.0.0",
+  "description": "@ark7/lazyload delays loading of object creation. Object will not be loaded before accessing its properties.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "rm -rf dist && ./node_modules/.bin/gulp build",
+    "release": "npm test && npm run build && cd dist && npm publish",
+    "test": "NODE_ENV=test node_modules/.bin/ts-mocha --trace-warnings test/**/*.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ark7-technology/lazyload.git"
+  },
+  "keywords": [
+    "Lazyload",
+    "Ark7"
+  ],
+  "author": "yz@ark7.com",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ark7-technology/lazyload/issues"
+  },
+  "homepage": "https://github.com/ark7-technology/lazyload#readme",
+  "dependencies": {
+    "@types/debug": "^4.1.5",
+    "debug": "^4.3.1"
+  },
+  "devDependencies": {
+    "@types/mocha": "^8.2.2",
+    "@types/should": "^13.0.0",
+    "gulp": "^4.0.2",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "mocha": "^9.0.0",
+    "should": "^13.2.3",
+    "ts-mocha": "^8.0.0",
+    "typescript": "^4.3.2"
+  },
+  "importSort": {
+    ".js, .jsx, .es6, .es": {
+      "parser": "babylon",
+      "style": "renke"
+    },
+    ".ts, .tsx": {
+      "parser": "typescript",
+      "style": "renke"
+    }
+  }
+}
