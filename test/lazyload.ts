@@ -49,4 +49,15 @@ describe('lazyload', () => {
     r1.foo2.should.be.eql('bar2');
     r1.foo3().should.be.eql('bar3');
   });
+
+  it('should return the same result for class constructor', () => {
+    const fn = () => A;
+
+    const r1 = lazyload(fn)();
+    const r2 = new r1();
+
+    r2.foo.should.be.eql('bar');
+    r2.foo2.should.be.eql('bar2');
+    r2.foo3().should.be.eql('bar3');
+  });
 });
